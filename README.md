@@ -8,7 +8,11 @@ Graph-in-Graph learning framework is a GNN-based model that represents graphs of
 
 ## Installation
 python == 3.9.0
+
 pytorch = 2.2.0
+
 pytorch-cuda == 11.8
+
 torch-geometric == 2.5.3
+
 biopython == 1.84
