@@ -1,6 +1,9 @@
 # GiG
 A Graph-in-Graph Learning Framework for Drug-Target Interaction Prediction
 
-<img width="1381" alt="Screenshot 2025-07-08 at 3 09 35 PM" src="https://github.com/user-attachments/assets/2a1d5849-3b64-4621-85d4-69f6b317f481" />
+Graph-in-Graph learning framework is a GNN-based model that represents graphs of drug and target molecular structures as meta-nodes in a drug-target interaction graph, enabling a detailed exploration of their intricate relationships.
+
+## Model Overview
+<img width="1370" alt="Screenshot 2025-07-08 at 3 10 44 PM" src="https://github.com/user-attachments/assets/b81dc2ad-ce9c-4f8f-bbb7-c602145ca92f" />
 
 ## Installation
