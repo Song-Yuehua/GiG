@@ -16,3 +16,6 @@ pytorch-cuda == 11.8
 torch-geometric == 2.5.3
 
 biopython == 1.84
+
+## Data Download
+Our data can be downloaded from https://drive.google.com/file/d/1DHN98GNzy_8OQ9_Z1r62m9BSo6HkVETr/view?usp=sharing
