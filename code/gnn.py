@@ -345,54 +345,9 @@ class LinkPredictionModel(torch.nn.Module):
         return x
 
 
-class LinkPredictionModel_GAT(torch.nn.Module):
-    def __init__(self, num_features, hidden_dim):
-        super(LinkPredictionModel_GAT, self).__init__()
-        # Adjust the number of heads as needed, here using 8 heads as an example
-        self.conv1 = GATConv(num_features, hidden_dim, heads=8, dropout=0.2)
-        # For subsequent layers, you might want to reduce the number of features per head to manage the dimensionality
-        self.conv2 = GATConv(hidden_dim * 8, hidden_dim, heads=8, concat=False, dropout=0.2)
-    
-    def forward(self, x, edge_index):
-        x = F.relu(self.conv1(x, edge_index))
-        x = self.conv2(x, edge_index)
-        return x
-    
-
-class LinkPredictionModel_SAGE(torch.nn.Module):
-    def __init__(self, num_features, hidden_dim):
-        super(LinkPredictionModel_SAGE, self).__init__()
-        self.conv1 = SAGEConv(num_features, hidden_dim)
-        self.conv2 = SAGEConv(hidden_dim, hidden_dim)
-
-    def forward(self, x, edge_index):
-        x = F.relu(self.conv1(x, edge_index))
-        x = self.conv2(x, edge_index)
-        return x
 
 
-from torch_geometric.nn import GINConv 
-from torch.nn import Linear, ReLU, BatchNorm1d, Sequential
 
-class LinkPredictionModel_GIN(torch.nn.Module):
-    def __init__(self, num_features, hidden_dim):
-        super(LinkPredictionModel_GIN, self).__init__()
-        nn1 = Sequential(Linear(num_features, hidden_dim), 
-                          ReLU())
-        self.conv1 = GINConv(nn1)
-        self.bn1 = torch.nn.BatchNorm1d(hidden_dim)
-
-        nn2 = Sequential(Linear(hidden_dim, hidden_dim), 
-                          ReLU())
-        self.conv2 = GINConv(nn2)
-        self.bn2 = torch.nn.BatchNorm1d(hidden_dim)
-
-    def forward(self, x, edge_index):
-        x = self.conv1(x, edge_index)
-        x = self.bn1(x)
-        x = self.conv2(x, edge_index)
-        x = self.bn2(x)
-        return x
 
 
 
