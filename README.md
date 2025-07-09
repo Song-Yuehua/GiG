@@ -18,4 +18,25 @@ torch-geometric == 2.5.3
 biopython == 1.84
 
 ## Data Download
-Our data can be downloaded from https://drive.google.com/file/d/1DHN98GNzy_8OQ9_Z1r62m9BSo6HkVETr/view?usp=sharing
+You can download the full dataset in **JSON** format from our [Google Drive](https://drive.google.com/file/d/1DHN98GNzy_8OQ9_Z1r62m9BSo6HkVETr/view?usp=sharing), or simply use the three files included in the `data/` folder:
+
+* **`drug_smiles.txt`**
+  Contains two columns:
+
+  1. Drug name
+  2. Corresponding SMILES string
+
+* **`protein_sequences.txt`**
+  Contains two columns:
+
+  1. Protein (target) name
+  2. Amino-acid sequence
+
+* **`mat_drug_protein.txt`**
+  A binary interaction matrix between drugs (rows) and proteins (columns):
+
+  * `0` = no interaction
+  * `1` = interaction
+
+Just clone this repo and point your data loader at `data/` to get started!
+
