@@ -17,26 +17,38 @@ torch-geometric == 2.5.3
 
 biopython == 1.84
 
-## Data
-You can download the full dataset in **JSON** format from our [Google Drive](https://drive.google.com/file/d/1DHN98GNzy_8OQ9_Z1r62m9BSo6HkVETr/view?usp=sharing), or simply use the three files included in the `data/` folder:
+## Download and Prepare Data
+
+You can obtain the full dataset in **JSON** format from our [Google Drive](https://drive.google.com/file/d/1DHN98GNzy_8OQ9_Z1r62m9BSo6HkVETr/view?usp=sharing), or simply use the three plain-text files included in the `data/` folder:
 
 * **`drug_smiles.txt`**
-  Contains two columns:
+  Two-column TSV:
 
   1. Drug name
-  2. Corresponding SMILES string
+  2. SMILES string
 
 * **`protein_sequences.txt`**
-  Contains two columns:
+  Two-column TSV:
 
   1. Protein (target) name
   2. Amino-acid sequence
 
 * **`mat_drug_protein.txt`**
-  A binary interaction matrix between drugs (rows) and proteins (columns):
+  A binary interaction matrix (drugs × proteins):
 
   * `0` = no interaction
   * `1` = interaction
 
+### Preparing Graph Inputs
+
+1. **Drug graphs**
+   Use [RDKit](https://www.rdkit.org/) to parse each SMILES string and generate its corresponding molecular graph.
+
+2. **Protein graphs**
+
+   1. Install and run [PconsC4](https://github.com/ElofssonLab/PconsC4) to predict residue–residue contact maps from each protein sequence.
+   2. Convert each contact map into a graph representation (nodes = residues; edges = predicted contacts).
+
+Once both drug and protein graphs are prepared, you can load them—together with the interaction matrix—to construct your drug–target interaction dataset.
 
 
