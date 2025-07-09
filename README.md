@@ -17,7 +17,7 @@ torch-geometric == 2.5.3
 
 biopython == 1.84
 
-## Data Download
+## Data
 You can download the full dataset in **JSON** format from our [Google Drive](https://drive.google.com/file/d/1DHN98GNzy_8OQ9_Z1r62m9BSo6HkVETr/view?usp=sharing), or simply use the three files included in the `data/` folder:
 
 * **`drug_smiles.txt`**
@@ -38,5 +38,5 @@ You can download the full dataset in **JSON** format from our [Google Drive](htt
   * `0` = no interaction
   * `1` = interaction
 
-Just clone this repo and point your data loader at `data/` to get started!
+
 
