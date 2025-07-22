@@ -19,7 +19,7 @@ biopython == 1.84
 
 ## Download and Prepare Data
 
-You can obtain the full dataset in **JSON** format from our [Huggingface]([https://drive.google.com/file/d/1DHN98GNzy_8OQ9_Z1r62m9BSo6HkVETr/view?usp=sharing](https://huggingface.co/)), or simply use the three plain-text files included in the `data/` folder:
+You can obtain the full dataset in **JSON** format from our [Huggingface]([[https://drive.google.com/file/d/1DHN98GNzy_8OQ9_Z1r62m9BSo6HkVETr/view?usp=sharing](https://huggingface.co/datasets/Yuehua66/GiG-dataset/resolve/main/dataset.json)]), or simply use the three plain-text files included in the `data/` folder:
 
 * **`drug_smiles.txt`**
   Two-column TSV:
